@@ -4,7 +4,7 @@
 class Prime {
 
 	public:
-		static void Prime::print_options();
+		static void print_options();
 		static void check_choice(char choice);
 
 		static void run_check_specific();
