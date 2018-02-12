@@ -1,8 +1,9 @@
 #include <iostream>
+#include "Prime.h"
 
 using namespace std;
 
-bool check_prime(int x) {
+bool Prime::check_prime(int x) {
 
 	int factors = 0;
 
@@ -15,10 +16,9 @@ bool check_prime(int x) {
 
 	return factors == 1;
 
-} 
+}
 
-
-int main() {
+void Prime::run_check_specific() {
 
 	int input;
 
@@ -26,7 +26,49 @@ int main() {
 
 	cin >> input;
 
-	cout << input << (check_prime(input) ? " is" : " is not") << " a prime number.";
+	cout << input << (Prime::check_prime(input) ? " is" : " is not") << " a prime number." << endl << endl;
+
+	Prime::print_options();
+
+} 
+
+void Prime::check_choice(char choice) {
+
+	switch(choice) {
+	
+		case 'A':
+			Prime::run_check_specific();
+			break;
+		case 'B':
+			//run_iteration();
+			break;
+		case 'C':
+			break;
+			
+	
+	}
+} 
+
+void Prime::print_options() {
+
+	char option;
+
+	cout << "A: Check Specific Number" << endl << "B: Iterate Primes To N Number" << endl << "C: Exit Program" << endl;
+
+	cin >> option;
+
+	Prime::check_choice(option);
+
+}
+
+void Prime::run_iteration() {}
+
+void Prime::iterate_primes(int max) {} 
+
+
+int main() {
+
+	Prime::print_options();
 
 	return 0;
 
